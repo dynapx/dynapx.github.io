@@ -1,0 +1,61 @@
+/* 卡片悬浮发光效果 */
+.md-typeset .admonition {
+    transition: all 0.3s ease;
+}
+.md-typeset .admonition:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 博客标题渐变动态效果 */
+.typed-text {
+    background: linear-gradient(120deg, #1fa2ff, #12d8fa, #a6ffcb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 光标闪烁效果 */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--md-primary-fg-color);
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 博客列表页宽容度和居中修复 */
+.md-typeset .md-post {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 隐藏侧边栏时的纯文本内容区居中 */
+.md-grid {
+    max-width: 1220px;
+}
+
+.md-content {
+    display: flex;
+    justify-content: center;
+}
+
+.md-content__inner {
+    max-width: 800px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
