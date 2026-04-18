@@ -735,6 +735,49 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-04-19 00:00:00+00:00">2026年4月19日</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="./" class="md-meta__link">技术分享</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 2 分钟阅读时间
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="vllm"><a class="toclink" href="../../2026/04/19/%E4%BD%BF%E7%94%A8-vllm-%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/">使用 vLLM 在远程服务器上部署大模型</a></h2>
+<p><strong>什么是 vLLM？</strong>
+<a href="https://github.com/vllm-project/vllm">vLLM</a> 是一个开源的高效大语言模型（LLM）推理和服务引擎。它的核心突破是首创了 <strong>PagedAttention</strong> 技术，通过对注意力机制中的 Key 和 Value 缓存（KV Cache）进行类似操作系统的分页内存管理，极大地缓解了由于序列长度变化造成的显存碎片化与浪费。得益于这种高效的显存利用率，vLLM 能提供远超传统方案（如 HuggingFace Transformers 原生管道）的吞吐量（Throughput）及并发处理能力，可以说是当前业界低成本部署大语言模型的首选利器！</p>
+<p>在真正实战远程部署模型时，除了享受 vLLM 极致的推理速度，我们还要兼顾一个非常现实的问题：如果 SSH 终端意外掉线了怎么办？通常连接断开会导致服务器正在运行的程序统统被“杀”掉。针对这种情况，我们需要引入 Linux 上的长连接利器——<code>tmux</code>，让 vLLM 部署更稳固。</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/04/19/%E4%BD%BF%E7%94%A8-vllm-%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/">
+          继续阅读
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-04-16 00:00:00+00:00">2026年4月16日</time></li>
         
           <li class="md-meta__item">

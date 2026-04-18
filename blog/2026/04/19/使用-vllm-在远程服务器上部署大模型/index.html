@@ -12,13 +12,11 @@
         <meta name="author" content="dynapx">
       
       
-        <link rel="canonical" href="https://dynapx.github.io/blog/2026/04/17/hello-world-%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
+        <link rel="canonical" href="https://dynapx.github.io/blog/2026/04/19/%E4%BD%BF%E7%94%A8-vllm-%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/">
       
       
-        <link rel="prev" href="../../16/-python-%E8%BF%9B%E9%98%B6%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E4%BB%A3%E7%A0%81/">
+        <link rel="prev" href="../../17/hello-world-%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
       
-      
-        <link rel="next" href="../../19/%E4%BD%BF%E7%94%A8-vllm-%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Hello World! 第一篇博客文章 - 我的个人博客</title>
+        <title>使用 vLLM 在远程服务器上部署大模型 - 我的个人博客</title>
       
     
     
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hello-world" class="md-skip">
+        <a href="#vllm" class="md-skip">
           跳转至
         </a>
       
@@ -116,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hello World! 第一篇博客文章
+              使用 vLLM 在远程服务器上部署大模型
             
           </span>
         </div>
@@ -735,13 +733,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1-tmux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        接下来要做什么？
+        1. 使用 tmux 保持远程会话
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-vllm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 启动 vLLM 服务
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 会话分离与恢复
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 会话分离与恢复">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全地断开连接 (分离会话)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重新连接并恢复会话
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -782,7 +830,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-04-17 00:00:00+00:00" class="md-ellipsis">2026年4月17日</time>
+                        <time datetime="2026-04-19 00:00:00+00:00" class="md-ellipsis">2026年4月19日</time>
                       </div>
                     </li>
                     
@@ -793,7 +841,7 @@
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/%E6%97%A5%E5%B8%B8/">日常</a></span>
+                              <a href="../../../../category/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></span>
                         </div>
                       </li>
                     
@@ -804,7 +852,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 1 分钟阅读时间
+                              需要 2 分钟阅读时间
                             
                           </span>
                         </div>
@@ -828,18 +876,64 @@
 
 
 
-<h1 id="hello-world">Hello World! 第一篇博客文章</h1>
-<p>这是我的第一篇博客文章，欢迎来到我的全新个人网站！</p>
+<h1 id="vllm">使用 vLLM 在远程服务器上部署大模型</h1>
+<p><strong>什么是 vLLM？</strong>
+<a href="https://github.com/vllm-project/vllm">vLLM</a> 是一个开源的高效大语言模型（LLM）推理和服务引擎。它的核心突破是首创了 <strong>PagedAttention</strong> 技术，通过对注意力机制中的 Key 和 Value 缓存（KV Cache）进行类似操作系统的分页内存管理，极大地缓解了由于序列长度变化造成的显存碎片化与浪费。得益于这种高效的显存利用率，vLLM 能提供远超传统方案（如 HuggingFace Transformers 原生管道）的吞吐量（Throughput）及并发处理能力，可以说是当前业界低成本部署大语言模型的首选利器！</p>
+<p>在真正实战远程部署模型时，除了享受 vLLM 极致的推理速度，我们还要兼顾一个非常现实的问题：如果 SSH 终端意外掉线了怎么办？通常连接断开会导致服务器正在运行的程序统统被“杀”掉。针对这种情况，我们需要引入 Linux 上的长连接利器——<code>tmux</code>，让 vLLM 部署更稳固。</p>
 <!-- more -->
 
-<h2 id="_1">接下来要做什么？</h2>
-<p>使用 Markdown 编写博客非常舒适。这篇博客文章存储在 <code>docs/blog/posts/hello-world.md</code> 之中。当你需要增加新的博客时，只需要在同一个目录下新建 <code>.md</code> 文件即可，系统会自动根据文件内的 <code>date</code>（日期）字段为你按照时间轴进行排序！</p>
-<p>这是代码块演示：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">)</span>
+<h2 id="1-tmux">1. 使用 tmux 保持远程会话</h2>
+<p><strong>什么是 tmux？</strong>
+<code>tmux</code> (Terminal Multiplexer) 是一款强大的终端复用神器。在远程服务器上部署大模型或者进行模型训练（炼丹）时，最担心的就是网络波动导致 SSH 意外断开，从而强制终止了正在运行的进程。而 <code>tmux</code> 可以将终端会话接管并挂载在后台，无论你是因为网络断开还是主动关闭电脑睡觉，只要服务器不关机，跑在 <code>tmux</code> 里的任务就会持续稳定运行。下次连接时，只需一条命令即可完美恢复之前的工作现场。</p>
+<p>首先，我们需要启动一个全新的后台会话，以防网络中断导致随后启动的 vLLM 任务终止。这里用到的是 <code>tmux new</code> 命令：</p>
+<ul>
+<li><code>new</code>：创建一个新的 tmux 会话。</li>
+<li><code>-s</code>：(session name) 为这个会话指定一个名字，这样方便我们之后如果有大批量的任务，能准确找到它。</li>
+</ul>
+<p>比如我们将这个会话命名为 <code>my_vllm_task</code>：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>my_vllm_task
 </span></code></pre></div>
+<p>进入模型所在目录并激活对应的虚拟环境：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>/home/njupt/PythonC/models/qwen32b
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>CPython
+</span></code></pre></div>
+<h2 id="2-vllm">2. 启动 vLLM 服务</h2>
+<p>当我们准备好环境后，就可以启动 vLLM 推理服务了。vLLM 提供了与 OpenAI API 兼容的 API Server <code>vllm serve</code> 命令。在执行该命令前，我们需要了解一些常用的核心参数配置：</p>
+<ul>
+<li><code>serve [模型路径或名称]</code>：指定你要加载的开源大模型，可以是 HuggingFace 上的在线库名，也可以是下载到本地的对应目录路径。</li>
+<li><code>--host 0.0.0.0</code>：绑定服务器上的所有内网/外网 IP 地址，如果使用默认的 <code>127.0.0.1</code> 只能在服务器自己所在的机器上内部访问，所以要想实现远程接口调用，这一项必不可少。</li>
+<li><code>--port 8000</code>：指定对外的监听端口号（默认就是 8000）。</li>
+<li><code>--tensor-parallel-size 1</code>：张量并行（Tensor Parallelism，简称 TP）的数量。这里指使用几张 GPU 去切分跑这个大模型，如果是单卡用户直接设为 1 即可。</li>
+<li><code>--gpu-memory-utilization 0.9</code>：指定 vLLM 能够占用的该 GPU 最大显存比例（这里设置占用 90% 的显存），剩余的 10% 留给系统或者其它基础进程。</li>
+<li><code>--max-model-len 4096</code>：设置模型单次处理的最大上下文 token 长度。如果显存小报错，可以调小这个值，相反显存充裕可以调大！</li>
+<li><code>--trust-remote-code</code>：部分模型（例如 Qwen）需要执行其 Hugging Face 仓库中自带的特定 Python 脚本，加上此项标志表示信任并允许执行远程代码。</li>
+</ul>
+<p>理解了这些参数，我们来实际通过以下命令启动 vLLM 模型服务。这里我们需要特别说明一下：我们使用的是部署前从 HuggingFace 上下载的 <strong>Qwen2.5-Coder-32B-Instruct</strong> 的 GPTQ Int4 量化版本，它已经被下载并存在了当前目录的 <code>Qwen2.5-Coder-32B-Instruct-GPTQ-Int4/</code> 文件夹下。使用量化版能大幅度降低显存占用。我们将其服务挂载在 <code>8000</code> 端口：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>vllm<span class="w"> </span>serve<span class="w"> </span>Qwen2.5-Coder-32B-Instruct-GPTQ-Int4/<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--tensor-parallel-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--gpu-memory-utilization<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--max-model-len<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>--trust-remote-code<span class="w"> </span>
+</span></code></pre></div>
+<h2 id="3">3. 会话分离与恢复</h2>
+<h3 id="_1">安全地断开连接 (分离会话)</h3>
+<ul>
+<li><strong>主动分离</strong>：按下 <code>Ctrl+B</code> 组合键，松开后立刻再按一下 <code>D</code> 键。你会看到 <code>[detached]</code> 的提示，并返回到普通的 SSH 终端。此时，你可以安全地关闭 SSH 窗口或断开网络连接。</li>
+<li><strong>被动分离</strong>：如果你的 SSH 连接因为网络波动直接断开，<code>tmux</code> 会话也会自动在后台保持运行，进程不会被杀掉。</li>
+</ul>
+<h3 id="_2">重新连接并恢复会话</h3>
+<p>当你再次通过 SSH 登录到这台服务器后，可以随时重新连接到之前的 <code>tmux</code> 会话，恢复工作现场。</p>
+<ul>
+<li><strong>查看所有会话</strong>：你可以列出当前所有正在运行的 tmux 会话：</li>
+</ul>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tmux<span class="w"> </span>ls
+</span></code></pre></div>
+- <strong>恢复到指定会话</strong>：使用刚才设定的会话名重新连接：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>my_vllm_task
+</span></code></pre></div>
+<hr />
 
 
 
@@ -884,7 +978,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../16/-python-%E8%BF%9B%E9%98%B6%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E4%BB%A3%E7%A0%81/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 🚀 Python 进阶：如何写出更优雅的代码">
+          <a href="../../17/hello-world-%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Hello World! 第一篇博客文章">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -894,27 +988,11 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                🚀 Python 进阶：如何写出更优雅的代码
+                Hello World! 第一篇博客文章
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../19/%E4%BD%BF%E7%94%A8-vllm-%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="md-footer__link md-footer__link--next" aria-label="下一页: 使用 vLLM 在远程服务器上部署大模型">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                使用 vLLM 在远程服务器上部署大模型
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
