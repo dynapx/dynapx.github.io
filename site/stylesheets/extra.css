@@ -36,3 +36,26 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* 博客列表页宽容度和居中修复 */
+.md-typeset .md-post {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 隐藏侧边栏时的纯文本内容区居中 */
+.md-grid {
+    max-width: 1220px;
+}
+
+.md-content {
+    display: flex;
+    justify-content: center;
+}
+
+.md-content__inner {
+    max-width: 800px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}

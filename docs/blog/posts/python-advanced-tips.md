@@ -20,8 +20,7 @@ tags:
 === "传统写法"
 ``python title="old_way.py" squares = [] for i in range(10): if i % 2 == 0: squares.append(i * i) print(squares) ``
 
-=== "优雅写法"
-``python title="new_way.py" # 结合了循环和条件判断，只需一行代码！ squares = [i * i for i in range(10) if i % 2 == 0] print(squares) ``
+x def greet(name: str):    print(f"Hello, {name}!")​greet("World")python
 
 ## 2. 善用数据类对象 (Data Classes)
 
